@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Tahmid Runner - Subway Style Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="score-box">
+                🏃 Score: <span id="score">0</span>
+            </div>
+            <div class="coins-box">
+                🪙 Coins: <span id="coins">0</span>
+            </div>
+            <div class="highscore-box">
+                🏆 Best: <span id="highscore">0</span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+        
+        <div class="controls-info">
+            👆 SWIPE: ← → to move | ↑ to Jump | ↓ to Roll
+        </div>
+        
+        <div class="touch-buttons">
+            <button class="touch-btn" id="leftBtn">◀</button>
+            <button class="touch-btn" id="rightBtn">▶</button>
+            <button class="touch-btn" id="jumpBtn">▲ JUMP</button>
+            <button class="touch-btn" id="rollBtn">▼ ROLL</button>
+        </div>
+        
+        <button id="restartBtn">🔄 START NEW RUN</button>
+        
+        <div id="gameOverScreen" style="display: none;">
+            <div class="gameover-content">
+                <h2>💀 GAME OVER 💀</h2>
+                <p>Tahmid crashed!</p>
+                <button id="playAgainBtn">🏃 PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
