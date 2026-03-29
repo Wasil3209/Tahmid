@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    display: inline-block;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.score-box, .coins-box, .highscore-box {
+    background: rgba(0,0,0,0.7);
+    padding: 8px 16px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    backdrop-filter: blur(5px);
+}
+
+.score-box { background: linear-gradient(135deg, #667eea, #764ba2); }
+.coins-box { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.highscore-box { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    background: #0a0a1a;
+}
+
+.controls-info {
+    text-align: center;
+    color: white;
+    margin: 15px 0 10px;
+    font-size: 14px;
+    background: rgba(0,0,0,0.5);
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.touch-buttons {
+    display: none;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.touch-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.1s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    min-width: 70px;
+}
+
+.touch-btn:active {
+    transform: scale(0.95);
+}
+
+#restartBtn {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: transform 0.2s;
+}
+
+#restartBtn:active {
+    transform: scale(0.98);
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.gameover-content {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 20px;
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.gameover-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.gameover-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#playAgainBtn {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Show touch buttons on mobile */
+@media (max-width: 768px) {
+    .touch-buttons {
+        display: flex;
+    }
+    
+    .controls-info {
+        font-size: 12px;
+    }
+    
+    .game-header {
+        gap: 8px;
+    }
+    
+    .score-box, .coins-box, .highscore-box {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    .touch-btn {
+        padding: 10px 16px;
+        font-size: 16px;
+        min-width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .touch-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+        min-width: 50px;
+    }
+}
